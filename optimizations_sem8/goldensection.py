@@ -16,7 +16,7 @@ def goldensection(f, a, b, epsilon):
     #creating a texttable object
     table = texttable.Texttable()
     table.add_row(["Iteration", "a", "b", "x1", "x2", "f(x1)", "f(x2)"])
-    while (x1 - x2) >= epsilon:
+    while (b - a) >= epsilon:
         #length of region
         l = b - a
         #new x1 and x2
@@ -39,7 +39,7 @@ def goldensection(f, a, b, epsilon):
     answer = (x1 + x2)/ 2.0
     pylab.plot(answer, f(answer), 'ro')
     pylab.show()
-    return (x1 + x2)/ 2
+    return (a, b)
 
 def f(x):
     """
@@ -47,8 +47,11 @@ def f(x):
     """
     #return x**2 + 54 / x
     #return x**4 - 15*x**3 + 72*x**2 - 1135*x
-    return np.sqrt((90*x - 30)**2 + (60*x)**2)
-    #return 12*x**5 - 45*x**4 + 40*x**3 + 5
+    #return np.sqrt((90*x - 30)**2 + (60*x)**2)
+    #return -(12*x**5 - 45*x**4 + 40*x**3 + 5)
+    #return np.sqrt(x**2 + (8*x / (x-3))**2)
+    #return np.exp(x) - x**3
+    return -(2*np.sin(x) - x**2 / 10.0)
 
 
 def funcplot(f, a, b, pts):
@@ -60,7 +63,10 @@ def funcplot(f, a, b, pts):
     h = float(b - a)/ (pts - 1)
     x = np.arange(a, b, h)
     y = f(x)
-    pylab.plot(x, y)  
-    
+    pylab.plot(x, y)
+    pylab.title("Function plot")
+    pylab.xlabel("x")
+    pylab.ylabel("f(x)")
 
-
+if __name__ == '__main__':
+    print goldensection(f, 0, 4, 0.0002) #to get minima
