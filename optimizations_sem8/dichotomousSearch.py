@@ -44,4 +44,4 @@ def f(x):
     #return -(2*np.sin(x) - x**2 / 10.0)
 
 if __name__ == '__main__':
-    print dichotomousSearch(f, 0, 10, 0.001, 100)
+    print dichotomousSearch(f, 0, 10, 0.001, 10)

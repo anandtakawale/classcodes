@@ -90,9 +90,9 @@ def f(x):
     """
     Returns value of the function of f(x)
     """
-    #return x**2 + 54 / x
+    return x**2 + 54 / x
     #return x**4 - 15*x**3 + 72*x**2 - 1135*x
-    return math.exp(x) - x**3
+    #return math.exp(x) - x**3
 
 def fib(x, cache = {}):
     """
@@ -107,3 +107,6 @@ def fib(x, cache = {}):
         if x not in cache.keys():
             cache[x] = fib(x-1) + fib(x-2)
         return cache[x]
+
+if __name__ == '__main__':
+    print fibonacciIter(f, 0, 6, 10)

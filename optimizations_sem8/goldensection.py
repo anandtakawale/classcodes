@@ -45,13 +45,13 @@ def f(x):
     """
     Returns value of the function of f(x)
     """
-    #return x**2 + 54 / x
+    return x**2 + 54 / x
     #return x**4 - 15*x**3 + 72*x**2 - 1135*x
     #return np.sqrt((90*x - 30)**2 + (60*x)**2)
     #return -(12*x**5 - 45*x**4 + 40*x**3 + 5)
     #return np.sqrt(x**2 + (8*x / (x-3))**2)
     #return np.exp(x) - x**3
-    return -(2*np.sin(x) - x**2 / 10.0)
+    #return -(2*np.sin(x) - x**2 / 10.0)
 
 
 def funcplot(f, a, b, pts):
@@ -69,4 +69,4 @@ def funcplot(f, a, b, pts):
     pylab.ylabel("f(x)")
 
 if __name__ == '__main__':
-    print goldensection(f, 0, 4, 0.0002) #to get minima
+    print goldensection(f, 0.1, 6, 0.0002) #to get minima
